@@ -20,7 +20,7 @@ class YellowCirclesForm(QWidget):
         self.init_ui()
 
     def init_ui(self):
-        pass
+        self.pb_draw_circles.clicked.connect(self.generate_circles)
 
     def generate_circles(self):
         self.circles.clear()
@@ -28,12 +28,12 @@ class YellowCirclesForm(QWidget):
             self.circles.append(Circle(randint(0, self.width()),
                                        randint(0, self.height()),
                                        randint(10, 100)))
+        self.update()
 
     def paintEvent(self, a0: QtGui.QPaintEvent) -> None:
         self.painter.begin(self)
         self.draw_circles()
         self.painter.end()
-
 
     def draw_circles(self):
         self.painter.setPen(QColor(255, 200, 0))
