@@ -41,7 +41,7 @@ class YellowCirclesForm(QWidget):
             self.draw_circle(circle)
 
     def draw_circle(self, circle):
-        self.painter.drawEllipse(circle.x, circle.y, circle.r, circle.r)
+        self.painter.drawEllipse(circle.x - circle.r, circle.y - circle.r, circle.r * 2, circle.r * 2)
 
 
 if __name__ == "__main__":
