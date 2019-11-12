@@ -36,7 +36,7 @@ class YellowCirclesForm(QWidget):
         self.painter.end()
 
     def draw_circles(self):
-        self.painter.setPen(QColor(255, 200, 0))
+        self.painter.setPen(QColor(randint(0, 255), randint(0, 255), randint(0, 255)))
         for circle in self.circles:
             self.draw_circle(circle)
 
